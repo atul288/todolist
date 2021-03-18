@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-atul:test123@cluster0.ctaqm.mongodb.net/todolistDB?retryWrites=true&w=majority", {useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-atul:test123@cluster0.ctaqm.mongodb.net/todolistDB?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true});
 
  const itemsSchema = {name: String};
 
@@ -137,5 +137,5 @@ if (port == null || port == "") {
 
 
 app.listen(port, function(){
-    console.log("Server has started on successfully");
+    console.log("Server has started on port successfully");
 });
